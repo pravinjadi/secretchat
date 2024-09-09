@@ -1,5 +1,5 @@
 // Import socket.io-client
-const socket = io('https://your-backend-server-url'); // Use the URL where you deployed your backend
+const socket = io('https://secretchat-fwvw.vercel.app/'); // Use the URL where you deployed your backend
 
 // Get elements
 const newRoomButton = document.getElementById('newRoomButton');
