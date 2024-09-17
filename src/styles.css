@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: 'Helvetica Neue';
 }
 
 body {
@@ -13,14 +13,25 @@ body {
     height: 100vh;
     background-color: #d6d6d6;
 }
+@keyframes dissolve {
+    0% { background-color: #e5f4ff; } /* Very light skyblue */
+    33% { background-color: #effcff; } /* very light blue */
+    64% { background-color: #efdfff; } /* Very light violet */
+    100% { background-color: #e5f4ff; } /* Very light skyblue */
+}
+
+body {
+    animation: dissolve 6s infinite;
+}
+
 
 /* Home Page Styles */
 .container {
     width: 60%;
-    height: 80%;
+    height: 60%;
     display: flex;
     background: #ffffff;
-    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
     overflow: hidden;
 }
@@ -38,9 +49,9 @@ body {
 }
 
 .title {
-    font-size: 48px;
+    font-size: 30px;
     color: #333;
-    font-weight: 600;
+    font-weight: 550;
 }
 
 .right {
@@ -158,3 +169,59 @@ body {
     border: 1px solid #e0e0e0;
     border-radius: 10px;
 }
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .container {
+        width: 80%;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .split {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+
+    .btn {
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+
+    .input-field {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .chat-container {
+        width: 90%;
+        height: 50%;
+    }
+
+    .chat-header, .chat-input {
+        padding: 10px;
+    }
+
+    .chat-input input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .chat-input button {
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+
+    .chat-window {
+        padding: 10px;
+    }
+
+    .message {
+        padding: 8px;
+    }
+}
+
