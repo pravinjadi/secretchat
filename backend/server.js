@@ -7,12 +7,16 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: '*',  // Allow any origin for simplicity
+        origin: 'https://secretchat-two.vercel.app/',  // Replace with your frontend's domain
         methods: ['GET', 'POST'],
     }
 });
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://secretchat-two.vercel.app/',  // Replace with your frontend's domain
+    methods: ['GET', 'POST'],
+}));
+
 
 // Handle Socket.IO connections
 io.on('connection', (socket) => {
